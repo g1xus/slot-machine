@@ -54,20 +54,21 @@ let winValueEl = document.getElementById('winValue')
 balanceEl.textContent = balance
 scoreEl.textContent = `${score}/9000`
 betEl.textContent = bet
-
+let isBetChangeable = true
 decreaseBetEl.addEventListener(("click"), (e) => {
-    if(bet - 10000 >= 0) {
+    if(bet - 10000 >= 0 && isBetChangeable) {
         bet -= 10000
         betEl.textContent = bet
     }
 })
 increaseBetEl.addEventListener(("click"), (e) => {
-    bet += 10000
-    betEl.textContent = bet
+    if(isBetChangeable) {
+        bet += 10000
+        betEl.textContent = bet
+    }
 })
-
 function rollAll() {
-
+    isBetChangeable = false
     if(score < 9000) {
         score += 100
         scoreEl.textContent = `${score}/9000`
@@ -85,7 +86,7 @@ function rollAll() {
         .all( [...reelsList].map((reel, i) => roll(reel, i)) )
 
         .then((deltas) => {
-
+            isBetChangeable = true
             deltas.forEach((delta, i) => indexes[i] = (indexes[i] + delta)%num_icons);
 
             if (indexes[0] == indexes[1] && indexes[1] == indexes[2]) {
