@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Slot Machine</title>
+</head>
+<body>
+<div class="app">
+    <div class="header">
+        <div class="round-button">
+            <img src="img/back.svg" height="14px" width="7px">
+        </div>
+        <div class="header-score">
+            <img src="img/star.svg" alt="Score" width="47px" height="47px" class="header-score__star">
+            <div class="header-score__stat text" id="score">500/9000</div>
+        </div>
+        <div class="header-score">
+            <img src="img/coins.svg" alt="Score" width="39px" height="27px" class="header-score__coins">
+            <div class="header-score__balance text" id="balance">9553215</div>
+        </div>
+
+    </div>
+    <div class="slots">
+        <div class="reel"></div>
+        <div class="reel"></div>
+        <div class="reel"></div>
+    </div>
+    <div class="controls">
+        <div class="controls-bet">
+            <div class="round-button" id="decreaseBet">
+                <img src="img/minus.svg">
+            </div>
+            <div class="controls-value text">
+                <span id="bet">50000</span>
+            </div>
+            <div class="round-button"  id="increaseBet">
+                <img src="img/plus.svg">
+            </div>
+        </div>
+        <div class="controls-win">
+            <div class="controls-value text">
+                <div class="controls-win__text text" id="winText">Win</div>
+                <span id="winValue">
+                    9000,999
+                </span>
+            </div>
+        </div>
+        <div class="controls-buttons">
+            <div class="controls-buttons__auto text" id="auto">
+                <span>Auto</span>
+            </div>
+            <div class="controls-buttons__spin text" id="spin">
+                <span>Spin</span>
+            </div>
+        </div>
+</div>
+
+
+
+<script src="scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  font-family: Impact, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.app {
+  background: url("../img/bg.jpg"), lightgray 50%;
+  background-size: contain;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (max-width: 800px) {
+  .app {
+    width: 100%;
+  }
+}
+
+.header, .controls {
+  display: flex;
+  align-items: center;
+  padding: 7px 38px;
+  border-bottom: 2px solid #913BFF;
+  background: linear-gradient(180deg, #8000FF 0%, #9E00FF 40.42%, #61009C 100%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px -11px 19px 0px rgba(56, 0, 112, 0.63) inset;
+  width: 100%;
+}
+@media screen and (max-width: 800px) {
+  .header, .controls {
+    padding: 7px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.header-score {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 6px 75px;
+  border-radius: 18.5px;
+  border: 1px solid #FFB800;
+  background: #370063;
+}
+.header-score:last-child {
+  margin-left: 80px;
+}
+@media screen and (max-width: 800px) {
+  .header-score:last-child {
+    margin-left: 50px;
+  }
+}
+.header-score__star {
+  position: absolute;
+  left: -6px;
+  top: -6px;
+}
+.header-score__coins {
+  position: absolute;
+  left: 10px;
+}
+.header-score__stat, .header-score__balance {
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.header-score__stat {
+  background: linear-gradient(180deg, #06F 0%, #BD00FF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.header-score__balance {
+  background: var(--1, linear-gradient(180deg, #EBFF00 0%, #FFA800 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.header .round-button {
+  margin-right: 63px;
+}
+@media screen and (max-width: 800px) {
+  .header .round-button {
+    margin-right: 40px;
+  }
+}
+
+.round-button {
+  width: 42px;
+  height: 42px;
+  outline: 1px solid rgba(255, 255, 255, 0.32);
+  outline-offset: -1px;
+  background: radial-gradient(90.6% 83.7% at 50% 16.3%, #FF00E5 6.04%, #9501FF 100%), linear-gradient(0deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0.32));
+  border-radius: 50%;
+  box-shadow: 0px 7px 5px 0px rgba(92, 15, 255, 0.3215686275), 0px 4px 1px 0px rgba(241, 202, 255, 0.4901960784) inset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.round-button img {
+  filter: drop-shadow(0px 2px 2px #330E4F);
+}
+
+.slots {
+  margin: 4px 0;
+  padding: 8px 21px;
+  position: relative;
+  width: 412px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #FFE600;
+  border-radius: 20px;
+  background: rgba(21, 9, 31, 0.73);
+}
+.slots .reel {
+  position: relative;
+  width: 112px;
+  height: 234px;
+  overflow: hidden;
+  background-image: url(../img/reel.png);
+  background-position: 0 0;
+  background-repeat: repeat-y;
+  margin-right: 24px;
+}
+.slots .reel:last-child {
+  margin-right: 0;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+.controls-bet {
+  display: flex;
+  align-items: center;
+}
+.controls-value {
+  border-radius: 10px;
+  background: #320950;
+  padding: 6px 14px;
+  text-align: center;
+  margin: 0 13px;
+}
+.controls-value span {
+  text-shadow: 0px 4px 10px rgba(250, 255, 0, 0.62);
+  background: var(--1, linear-gradient(180deg, #EBFF00 0%, #FFA800 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.controls-win .controls-value {
+  display: flex;
+}
+.controls-win .controls-value span {
+  opacity: 0;
+}
+.controls-win__text {
+  opacity: 0;
+  margin-right: 37px;
+  background: var(--2, linear-gradient(180deg, #FFF 0%, #1DC9FF 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #244581;
+  text-stroke: 1px #244581;
+}
+.controls-buttons {
+  display: flex;
+}
+.controls-buttons__auto, .controls-buttons__spin {
+  padding: 11px 27px;
+  box-shadow: 0px 4px 4px 0px rgba(36, 255, 0, 0.27), 0px 4px 4px 0px rgba(255, 247, 207, 0.65) inset, 0px -6px 4px 0px rgba(0, 255, 56, 0.26) inset;
+  border-radius: 11px;
+  cursor: pointer;
+}
+.controls-buttons__auto {
+  margin-right: 10px;
+  border: 1px solid #00A3FF;
+  background: linear-gradient(180deg, #70FF00 0%, #BD00FF 0.01%, #005484 100%);
+  box-shadow: 0px 4px 4px 0px rgba(36, 255, 0, 0.27), 0px 4px 4px 0px rgba(255, 247, 207, 0.65) inset, 0px -6px 4px 0px rgba(0, 163, 255, 0.26) inset;
+}
+.controls-buttons__auto_active {
+  background: linear-gradient(180deg, #000dff 0%, #009dff 0.01%, #005484 100%);
+}
+.controls-buttons__auto span {
+  background: var(--2, linear-gradient(180deg, #FFF 0%, #1DC9FF 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #244581;
+  text-stroke: 1px #244581;
+}
+.controls-buttons__spin {
+  border: 1px solid #FFB800;
+  background: linear-gradient(180deg, #70FF00 0%, #008405 100%);
+  box-shadow: 0px 4px 4px 0px rgba(36, 255, 0, 0.27), 0px 4px 4px 0px rgba(255, 247, 207, 0.65) inset, 0px -6px 4px 0px rgba(0, 255, 56, 0.26) inset;
+}
+.controls-buttons__spin span {
+  background: linear-gradient(180deg, #FFF 0%, #73FF1D 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #28c203;
+  text-stroke: 1px #28c203;
+}
+
+/*# sourceMappingURL=styles.css.map */
