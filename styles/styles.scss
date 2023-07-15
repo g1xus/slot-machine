@@ -2,6 +2,17 @@ $icon_width: 112px;
 $icon_height: 78px;
 $num_icons: 9;
 
+@font-face {
+  font-family: 'Impact';
+  src: url('../fonts/Impact.eot');
+  src: local('Impact'),
+  url('../fonts/Impact.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Impact.woff') format('woff'),
+  url('../fonts/Impact.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html, body { height: 100%; width: 100%; margin: 0; padding: 0}
 * {
   box-sizing: border-box;
